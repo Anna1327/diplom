@@ -120,13 +120,13 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a href="user.html">
+                           <a href="{% url 'user' %}">
                                <p>Account</p>
                             </a>
                         </li>
                         
                         <li>
-                            <a href="#">
+                            <a href="{% url 'logout' %}">
                                 <p>Log out</p>
                             </a>
                         </li>
@@ -230,7 +230,7 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{% url 'home' %}">
                                 Home
                             </a>
                         </li>

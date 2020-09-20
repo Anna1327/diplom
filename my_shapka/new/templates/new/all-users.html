@@ -120,13 +120,13 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a href="user.html">
+                           <a href="{% url 'user' %}">
                                <p>Account</p>
                             </a>
                         </li>
                         
                         <li>
-                            <a href="#">
+                            <a href="{% url 'logout' %}">
                                 <p>Log out</p>
                             </a>
                         </li>
@@ -171,143 +171,6 @@
 
                                         </tr>
                                     {% endfor %}
-<!--                                        <tr>-->
-<!--                                        	<td>1</td>-->
-<!--                                        	<td>Dakota Rice</td>-->
-<!--                                        	<td>$36,738</td>-->
-<!--                                        	<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                        	<td>2</td>-->
-<!--                                        	<td>Minerva Hooper</td>-->
-<!--                                        	<td>$23,789</td>-->
-<!--                                        	<td>Curaçao</td>-->
-<!--                                        	<td>Sinaai-Waas</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                        	<td>3</td>-->
-<!--                                        	<td>Sage Rodriguez</td>-->
-<!--                                        	<td>$56,142</td>-->
-<!--                                        	<td>Netherlands</td>-->
-<!--                                        	<td>Baileux</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                        	<td>4</td>-->
-<!--                                        	<td>Philip Chaney</td>-->
-<!--                                        	<td>$38,735</td>-->
-<!--                                        	<td>Korea, South</td>-->
-<!--                                        	<td>Overland Park</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                        	<td>5</td>-->
-<!--                                        	<td>Doris Greene</td>-->
-<!--                                        	<td>$63,542</td>-->
-<!--                                        	<td>Malawi</td>-->
-<!--                                        	<td>Feldkirchen in Kärnten</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--											-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                        	<td>6</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>7</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>8</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>9</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>10</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>11</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>12</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>13</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>14</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-<!--										<tr>-->
-<!--                                        	<td>15</td>-->
-<!--                                        	<td>Mason Porter</td>-->
-<!--                                        	<td>$78,615</td>-->
-<!--                                        	<td>Chile</td>-->
-<!--                                        	<td>Gloucester</td>-->
-<!--											<td>Niger</td>-->
-<!--                                        	<td>Oud-Turnhout</td>-->
-<!--                                        </tr>-->
-
                                     </tbody>
                                 </table>
 
@@ -323,7 +186,7 @@
                 <nav class="pull-left">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{% url 'home' %}">
                                 Home
                             </a>
                         </li>
