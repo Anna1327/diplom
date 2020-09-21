@@ -1,3 +1,4 @@
+from django.contrib.auth import views
 from django.urls import path
 from .views import *
 
@@ -11,5 +12,5 @@ urlpatterns = [
     path('home/', HomeView.as_view(), name='home'),
     path('user/', UserView.as_view(), name='user'),
     path('all-users/', AllUsersView.as_view(), name='all-users'),
-    path('notifications/', NotificationsView.as_view(), name='notifications')
+    path('notifications/', NotificationsView.as_view(), name='notifications'),
     ]

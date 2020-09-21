@@ -22,9 +22,6 @@
     <link href="{% static "new/css/light-bootstrap-dashboard.css" %}" rel="stylesheet">
 
 
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="{% static "new/css/demo.css" %}" rel="stylesheet">
-
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
@@ -39,37 +36,34 @@
 		<div class="row">
 
 			<nav role="navigation" class="navbar navbar-inverse">
-
+				<div class="container">
 					<div class="navbar-header header">
-						<div class="container">
-
-							<div class="row">
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-								<h1><a href="chat2desk.com">Monitoring system</a></h1>
-								<h3>for Tech Support C2D</h3>
-							</div>
-							</div>
+						<div class="col-lg-12 text-center">
+							<h1><a href="chat2desk.com">Monitoring system</a></h1>
+							<h3>for Tech Support C2D</h3>
 						</div>
-					<div id="navbarCollapse" class="collapse navbar-collapse navbar-right">
-						<ul class="nav nav-pills">
-							<li>
-								<a href="#" type="button" class="btn btn-secondary btn-lg btn-md" role="button" data-toggle="button" aria-pressed="false" autocomplete="off">
-									Register
-									<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-									</svg>
-								</a>
-							</li>
 
-							<li>
-								<a href="{% url 'login' %}" type="button" class="btn btn-secondary btn-lg btn-md" role="button" data-toggle="button" aria-pressed="false" autocomplete="on">
-									Sign in
+						<div id="navbarCollapse" class="collapse navbar-collapse navbar-right">
+							<ul class="nav nav-pills">
+								<li>
+									<a href="#" type="button" class="btn btn-secondary btn-lg btn-md btn-sm" role="button" data-toggle="button" aria-pressed="false" autocomplete="on">
+										Register
+										<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+										</svg>
+									</a>
+								</li>
 
-								</a>
-							</li>
+								<li>
+									<a href="{% url 'login' %}" type="button" class="btn btn-secondary btn-lg btn-md btn-sm" role="button" data-toggle="button" aria-pressed="false" autocomplete="on">
+										Sign in
 
-						</ul>
-					</div>
+									</a>
+								</li>
+
+							</ul>
+						</div>
+
 						<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
 						<span class="sr-only sr-only-focusable">Toggle navigation</span>
 						<span class="icon-bar"></span>
@@ -77,6 +71,7 @@
 						<span class="icon-bar"></span>
 						</button>
 					</div>
+				</div>
 				<hr>    
 
 			</nav>
@@ -86,7 +81,7 @@
 		<div class="margin-2"></div>
 
 			<div class="container-fluid">
-				<div class="col-lg-12 col-sm-12 col-xs-12">
+				<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
 
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
@@ -110,55 +105,71 @@
 					<hr>
 				</div>
 			</div>
-			<div class="col-lg-7 col-sm-12 col-md-12 col-xs-12">
-				<h3>&nbsp;&nbsp;&nbsp;Основные функции системы мониторинга:</h3>
+
+			<div class="col-lg-3 col-xs-12 col-md-6 col-sm-6">
+				<div class="card bg-light mb-3 text-right" style="max-width: 38rem;">
+					<img src="{% static "new/img/razornet1.jpg" %}" class="card-img-top" alt="...">
+					<div class="card-body">
+					  <h5 class="card-title">Tech support</h5>
+					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					  <a href="chat2desk.com" class="btn btn-secondary">Support Team</a>
+					</div>
+				  </div>
+				  <div class="margin-8"></div>
+
+			</div>
+
+			<div class="col-lg-6 col-sm-12 col-md-6 col-xs-12 text-center">
+				<h3>Основные функции системы мониторинга:</h3>
 				<div class="margin-8"></div>
-				<div class="card border-primary mb-3 text-center" style="max-width: 68rem;">
+				<div class="card border-primary mb-3 text-center" style="max-width: 88rem;">
 					<div class="card-body text-secondary">
 					  <p class="card-text">Мониторинг состояния подключенных клиентов</p>
 					</div>
 				</div>
-				<div class="card border-secondary mb-3 text-center" style="max-width: 68rem;">
+				<div class="card border-secondary mb-3 text-center" style="max-width: 88rem;">
 					<div class="card-body text-secondary">
 					  <p class="card-text">Поиск свободных серверов для подключения</p>
 					</div>
 				</div>
-				<div class="card border-success mb-3 text-center" style="max-width: 68rem;">
+				<div class="card border-success mb-3 text-center" style="max-width: 88rem;">
 					<div class="card-body text-secondary">
-					  <p class="card-text">Оповещения в телеграм боте для оперативной реакции</p>
+					  <p class="card-text">Оповещения в виде всплывающих уведомлений</p>
 					</div>
 				</div>
-				<div class="card border-danger mb-3 text-center" style="max-width: 68rem;">
+				<div class="card border-danger mb-3 text-center" style="max-width: 88rem;">
 					<div class="card-body text-secondary">
-					  <p class="card-text">Оповещения в телеграм боте для оперативной реакции</p>
+					  <p class="card-text">Личный кабинет пользователя</p>
 					</div>
 				</div>
-				<div class="card border-warning mb-3 text-center" style="max-width: 68rem;">
+				<div class="card border-warning mb-3 text-center" style="max-width: 88rem;">
 					<div class="card-body text-secondary">
-					  <p class="card-text">Оповещения в телеграм боте для оперативной реакции</p>
+					  <p class="card-text">Возможность просмотра расписания для сотрудников</p>
 					</div>
 				</div>
-				<div class="card border-info mb-3 text-center" style="max-width: 68rem;">
+				<div class="card border-info mb-3 text-center" style="max-width: 88rem;">
 					<div class="card-body text-secondary">
-					  <p class="card-text">Оповещения в телеграм боте для оперативной реакции</p>
+					  <p class="card-text">Визуальное отображение информации в виде графиков</p>
 					</div>
 				</div>
 
 
-				
-				
+
+
 			</div>
-			<div class="col-lg-5 col-sm-12 hidden-md hidden-xs">
-				<div class="card bg-light mb-3 text-right" style="width: 48rem;">
-					<img src="{% static "new/img/4.PNG" %}" class="card-img-top" alt="...">
+
+
+			<div class="col-lg-3 col-md-12 col-xs-12 hidden-sm">
+				<div class="card bg-light mb-3 text-right" style="max-width: 38rem;">
+					<img src="{% static "new/img/5.png" %}" class="card-img-top" alt="...">
 					<div class="card-body">
-					  <h5 class="card-title">Название карточки</h5>
+					  <h5 class="card-title">About company</h5>
 					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					  <a href="chat2desk.com" class="btn btn-secondary">Переход куда-нибудь</a>
+					  <a href="chat2desk.com" class="btn btn-secondary">Blog</a>
 					</div>
 				  </div>
 				  <div class="margin-8"></div>
-				  
+
 			</div>
 		</div>
 	</div>
@@ -177,3 +188,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>
+

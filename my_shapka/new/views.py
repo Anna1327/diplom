@@ -13,7 +13,6 @@ class DashboardView(View):
 
 
 class RuView(ListView):
-    paginate_by = 2
     model = Ru
     template_name = 'new/table-ru.html'
     context_object_name = 'table-ru'
@@ -31,7 +30,6 @@ class RuView(ListView):
 
 
 class EuroView(ListView):
-    paginate_by = 2
     model = Euro
     template_name = 'new/table-euro.html'
     context_object_name = 'table-euro'
@@ -49,7 +47,6 @@ class EuroView(ListView):
 
 
 class FreeView(ListView):
-    paginate_by = 2
     model = Free
     template_name = 'new/free.html'
     ordering = '-id'
@@ -84,8 +81,6 @@ class AllUsersView(ListView):
 
     def get_queryset(self):
         return User.objects.all()
-
-
 
 
 class NotificationsView(View):
