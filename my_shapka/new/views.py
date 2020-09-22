@@ -13,6 +13,7 @@ class DashboardView(View):
 
 
 class RuView(ListView):
+    paginate_by = 4
     model = Ru
     template_name = 'new/table-ru.html'
     context_object_name = 'table-ru'
@@ -21,15 +22,17 @@ class RuView(ListView):
         return Ru.objects.all().filter(Q(stable_status='Offline') | Q(stable_status='Lost_registration'))
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['whatsapp'] = self.get_queryset().filter(transport="Whatsapp")
-        context['viber'] = self.get_queryset().filter(transport="Viber")
+        context = {
+            'whatsapp': super().get_context_data(
+                object_list=self.get_queryset().filter(transport="Whatsapp"), **kwargs),
+            'viber': super().get_context_data(
+                object_list=self.get_queryset().filter(transport="Viber"))
+        }
         return context
-    # def get(self, request):
-    #     return render(request, 'new/table-ru.html')
 
 
 class EuroView(ListView):
+    paginate_by = 4
     model = Euro
     template_name = 'new/table-euro.html'
     context_object_name = 'table-euro'
@@ -37,13 +40,19 @@ class EuroView(ListView):
     def get_queryset(self):
         return Euro.objects.all().filter(Q(stable_status='Offline') | Q(stable_status='Lost_registration'))
 
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['wa'] = self.get_queryset().filter(transport="Whatsapp")
+    #     context['vib'] = self.get_queryset().filter(transport="Viber")
+    #     return context
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['wa'] = self.get_queryset().filter(transport="Whatsapp")
-        context['vib'] = self.get_queryset().filter(transport="Viber")
+        context = {
+            'wa': super().get_context_data(
+                object_list=self.get_queryset().filter(transport="Whatsapp"), **kwargs),
+            'vib': super().get_context_data(
+                object_list=self.get_queryset().filter(transport="Viber"))
+        }
         return context
-    # def get(self, request):
-    #     return render(request, 'new/table-euro.html')
 
 
 class FreeView(ListView):

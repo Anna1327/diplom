@@ -158,7 +158,7 @@
 										<th>Partner ID</th>
                                     </thead>
                                     <tbody>
-                                    {% for w in wa %}
+                                    {% for w in wa.object_list %}
                                     <tr class='table table-striped'>
                                         <td>{{ w.device_id }}</td>
                                         <td>{{ w.phone }}</td>
@@ -174,16 +174,16 @@
                                 </table>
                                 <div class="pagination pull-right">
                                 <span class="step-links">
-                                    {% if page_obj.has_previous %}
-                                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                    {% if wa.page_obj.has_previous %}
+                                        <a href="?page={{ wa.page_obj.previous_page_number }}">previous</a>
                                     {% endif %}
 
                                     <span class="current">
-                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                        Page {{ wa.page_obj.number }} of {{ wa.page_obj.paginator.num_pages }}
                                     </span>
 
-                                    {% if page_obj.has_next %}
-                                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                    {% if wa.page_obj.has_next %}
+                                        <a href="?page={{ wa.page_obj.next_page_number }}">next</a>
                                     {% endif %}
                                 </span>
                                 </div>
@@ -211,7 +211,7 @@
 										<th>Partner ID</th>
                                     </thead>
                                     <tbody>
-                                    {% for v in vib %}
+                                    {% for v in vib.object_list %}
                                     <tr class='table table-striped'>
                                         <td>{{ v.device_id }}</td>
                                         <td>{{ v.phone }}</td>
@@ -227,16 +227,16 @@
                                 </table>
                                 <div class="pagination pull-right">
                                 <span class="step-links">
-                                    {% if page_obj.has_previous %}
-                                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                    {% if vib.page_obj.has_previous %}
+                                        <a href="?page={{ vib.page_obj.previous_page_number }}">previous</a>
                                     {% endif %}
 
                                     <span class="current">
-                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                        Page {{ vib.page_obj.number }} of {{ vib.page_obj.paginator.num_pages }}
                                     </span>
 
-                                    {% if page_obj.has_next %}
-                                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                    {% if vib.page_obj.has_next %}
+                                        <a href="?page={{ vib.page_obj.next_page_number }}">next</a>
                                     {% endif %}
                                 </span>
                                 </div>
