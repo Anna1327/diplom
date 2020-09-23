@@ -156,7 +156,7 @@
                                         <th class="th-lg"></th>
                                     </thead>
                                     <tbody>
-                                    {% for ru in bs %}
+                                    {% for ru in bs.object_list %}
                                     <tr class='table table-striped'>
                                         <td>{{ ru.id }}</td>
                                         <td></td>
@@ -170,16 +170,16 @@
                                 </table>
                                 <div class="pagination pull-right">
                                 <span class="step-links">
-                                    {% if page_obj.has_previous %}
-                                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                    {% if bs.page_obj.has_previous %}
+                                        <a href="?page={{ bs.page_obj.previous_page_number }}">previous</a>
                                     {% endif %}
 
                                     <span class="current">
-                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                        Page {{ bs.page_obj.number }} of {{ bs.page_obj.paginator.num_pages }}
                                     </span>
 
-                                    {% if page_obj.has_next %}
-                                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                    {% if bs.page_obj.has_next %}
+                                        <a href="?page={{ bs.page_obj.next_page_number }}">next</a>
                                     {% endif %}
                                 </span>
                                 </div>
@@ -204,7 +204,7 @@
                                         <th class="th-lg">Status</th>
                                     </thead>
                                     <tbody>
-                                    {% for ru in clicker %}
+                                    {% for ru in clicker.object_list %}
                                     <tr class='table table-striped'>
                                         <td>{{ ru.id }}</td>
                                         <td></td>
@@ -216,16 +216,16 @@
                                 </table>
                                 <div class="pagination pull-right">
                                 <span class="step-links">
-                                    {% if page_obj.has_previous %}
-                                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                    {% if clicker.page_obj.has_previous %}
+                                        <a href="?page={{ clicker.page_obj.previous_page_number }}">previous</a>
                                     {% endif %}
 
                                     <span class="current">
-                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                        Page {{ clicker.page_obj.number }} of {{ clicker.page_obj.paginator.num_pages }}
                                     </span>
 
-                                    {% if page_obj.has_next %}
-                                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                    {% if clicker.page_obj.has_next %}
+                                        <a href="?page={{ clicker.page_obj.next_page_number }}">next</a>
                                     {% endif %}
                                 </span>
                                 </div>
