@@ -13,5 +13,5 @@ urlpatterns = [
     path('user/', UserView.as_view(), name='user'),
     path('all-users/', AllUsersView.as_view(), name='all-users'),
     path('notifications/', NotificationsView.as_view(), name='notifications'),
-    path('register/', RegistrationView.as_view(), name='register'),
+    path('signup/', signup, name='signup'),
     ]

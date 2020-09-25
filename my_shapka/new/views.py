@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View, ListView
 from django.db.models import Q
-from django.http import HttpResponseRedirect, request
-from django.urls import reverse
+from django.contrib.auth import login, authenticate
+from django.core.exceptions import ValidationError
 from .forms import *
 
 from .models import *
@@ -119,6 +119,17 @@ class LogoutView(View):
         return render(request, 'registration/logged_out.html')
 
 
-class RegistrationView(View):
-    def get(self, request):
-        return render(request, 'registration/register.html')
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+        username = form.cleaned_data.get('username')
+        my_password = form.cleaned_data.get('password1')
+        user = authenticate(username=username, password=my_password)
+        login(request, user)
+        return redirect('ru')
+    else:
+        form = SignUpForm()
+        return render(request, 'registration/signup.html', {'form': form})

@@ -1,6 +1,9 @@
-from django import forms
+
 from .models import *
-from django.core.exceptions import ValidationError
+
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 class RegistrationForm(forms.ModelForm):
@@ -24,3 +27,11 @@ class RegistrationForm(forms.ModelForm):
         username = self.cleaned_data['username']
         if User.objects.filter(username=username).exists():
             raise forms.ValidationError('Пользователь с данным логином уже зарегистрирован в системе!', code='user exists',)
+
+
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(max_length=254, help_text='Это поле обязательно')
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2', )
