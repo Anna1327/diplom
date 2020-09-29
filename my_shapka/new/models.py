@@ -1,14 +1,14 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 
-class User(models.Model):
+class Profile(models.Model):
     username = models.CharField(max_length=30, default='null')
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=30)
-    email = models.CharField(max_length=50, default='null')
+    email = models.ForeignKey(User, on_delete=models.CASCADE)
     OPERATOR = 'Operator'
     SUPERVISOR = 'Supervisor'
     ROLE = ((OPERATOR, 'Operator'),
@@ -18,12 +18,16 @@ class User(models.Model):
 
     phone = models.IntegerField(default=0)
     tg_user = models.CharField(max_length=30, default='null')
+    password = models.CharField(max_length=50, default='null')
+    date_last_update = models.DateTimeField()
+    avatar = models.ImageField(upload_to='uploads')
+    operator_id = models.IntegerField(default=0)
 
     def __str__(self):
         return f'{self.first_name}'
 
 
-class Free(models.Model):
+class Equipment(models.Model):
     session = models.CharField(max_length=20)
 
     BS = 'BS'

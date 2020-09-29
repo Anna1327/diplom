@@ -55,18 +55,13 @@ class EuroView(ListView):
 
 class FreeView(ListView):
     paginate_by = 2
-    model = Free
+    model = Equipment
     template_name = 'new/free.html'
     context_object_name = 'free_ru'
 
     def get_queryset(self):
-        return Free.objects.all().filter(status="Free")
+        return Equipment.objects.all().filter(status="Free")
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['bs'] = self.get_queryset().filter(type="BS")
-    #     context['clicker'] = self.get_queryset().filter(type="Clicker")
-    #     return context
     def get_context_data(self, **kwargs):
         context = {
             'bs': super().get_context_data(
@@ -90,20 +85,17 @@ class UserView(View):
 
 
 class AllUsersView(ListView):
-    model = User
+    model = Profile
     template_name = 'new/all-users.html'
     context_object_name = 'allusers'
 
     def get_queryset(self):
-        return User.objects.all()
+        return Profile.objects.all()
 
 
 class NotificationsView(View):
 
     def get(self, request):
-        users = User.objects.using('my_sql').all()
-        print('================================================')
-        print(users)
         return render(request, 'new/notifications.html')
 
 
