@@ -1,18 +1,40 @@
+{% load static %}
 
-<h2>Регистрация</h2>
-<form method="post">
-{% csrf_token %}
-{% for field in form %}
-<p>
-  {{ field.label_tag }}<br>
-  {{ field }}
-  {% if field.help_text %}
-  <span>{{ field.help_text }}</span>
-  {% endif %}
-  {% for error in field.errors %}
-  <p>{{ error }}</p>
-  {% endfor %}
-</p>
-{% endfor %}
-<button type="submit">Отправить</button>
-</form>
+<link href="{% static "new/css/bootstrap.min.css" %}" rel="stylesheet">
+<link href="{% static "new/css/light-bootstrap-dashboard.css" %}" rel="stylesheet">
+
+	<nav class="container-fluid">
+		<nav class="row">
+
+			<nav role="navigation" class="navbar navbar">
+				<div class="container">
+					<div class="navbar-header header">
+						<div class="col-lg-12 text-center">
+							<h1><a href="chat2desk.com">Monitoring system</a></h1>
+							<h3>for Tech Support C2D</h3>
+						</div>
+                        <div class="container">
+                        <h2>Регистрация</h2>
+                        <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <p>
+                          {{ field.label_tag }}<br>
+                          {{ field }}
+                          {% if field.help_text %}
+                          <span>{{ field.help_text }}</span>
+                          {% endif %}
+                          {% for error in field.errors %}
+                          <p>{{ error }}</p>
+                          {% endfor %}
+                        </p>
+                        {% endfor %}
+                        <button type="submit">Отправить</button>
+
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+      </nav>
+</nav>

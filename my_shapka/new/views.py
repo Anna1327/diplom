@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View, ListView
 from django.db.models import Q
 from django.contrib.auth import login, authenticate
-from django.core.exceptions import ValidationError
+
 from .forms import *
 
 from .models import *
@@ -108,7 +108,7 @@ class LoginView(View):
 class LogoutView(View):
 
     def get(self, request):
-        return render(request, 'registration/logged_out.html')
+        return redirect('new/home.html')
 
 
 def signup(request):
