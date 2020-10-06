@@ -25,9 +25,9 @@ class RegistrationForm(forms.ModelForm):
         }
 
     def clean(self):
-        username = self.cleaned_data['username']
-        if User.objects.filter(username=username).exists():
-            raise forms.ValidationError('Пользователь с данным логином уже зарегистрирован в системе!', code='user exists',)
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError('Пользователь с данным email уже зарегистрирован в системе!', code='user exists',)
 
 
 class SignUpForm(UserCreationForm):

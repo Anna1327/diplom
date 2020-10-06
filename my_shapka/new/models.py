@@ -1,14 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
-
 # Create your models here.
 
 
 class Profile(models.Model):
-    username = models.CharField(max_length=30, default='null')
+    username = models.ForeignKey('auth.User', on_delete=models.CASCADE, unique=True)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=30)
-    email = models.ForeignKey(User, on_delete=models.CASCADE)
+    email = User.objects.all().filter(['email'])
     OPERATOR = 'Operator'
     SUPERVISOR = 'Supervisor'
     ROLE = ((OPERATOR, 'Operator'),
@@ -25,6 +24,11 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.first_name}'
+
+
+users = User.objects.filter(email='anna.nekrasova@chat2desk.com')
+print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+print(users)
 
 
 class Equipment(models.Model):
