@@ -1,41 +1,11 @@
+{% extends "new/base.html" %}
 {% load static %}
+{% load i18n %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="{% static "new/img/favicon.ico" %}">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-	<title>Monitoring system</title>
-
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-
-
-    <!-- Bootstrap core CSS     -->
-    <link href="{% static "new/css/bootstrap.min.css" %}" rel="stylesheet">
-
-    <!-- Animation library for notifications   -->
-    <link href="{% static "new/css/animate.min.css" %}" rel="stylesheet">
-
-    <!--  Light Bootstrap Table core CSS    -->
-    <link href="{% static "new/css/light-bootstrap-dashboard.css" %}" rel="stylesheet">
-
-
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="{% static "new/css/demo.css" %}" rel="stylesheet">
-
-
-    <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="{% static "new/css/pe-icon-7-stroke.css" %}" rel="stylesheet" />
-</head>
-<body>
+{% block title %}
 
 <div class="wrapper">
-    <div class="sidebar" data-color="azure" data-image="url(/new/img/ok1.jpg);">
+    <div class="sidebar" data-color="azure" data-image="assets/img/ok1.jpg">
 
     	<div class="sidebar-wrapper">
             <div class="logo">
@@ -63,6 +33,7 @@
                         <p>RU</p>
                     </a>
                 </li>
+
 				<li>
                     <a href="{% url 'euro' %}">
                         <i class="pe-7s-note2"></i>
@@ -75,65 +46,20 @@
                         <p>Free</p>
                     </a>
                 </li>
-                
+
                 <li>
                     <a href="{% url 'notifications' %}">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
-				
+
             </ul>
     	</div>
     </div>
+    {% endblock %}
 
-    <div class="main-panel">
-		<nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="https://docs.google.com/spreadsheets/d/19g-wNE2CxRWVLIERXiHfRqehrO6jy7BGZFBZEAy80WQ/edit?usp=sharing">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-								<p class="hidden-lg hidden-md">Dashboard</p>
-                            </a>
-                        </li>
-                        
-                        <li>
-                           <a href="">
-                                <i class="fa fa-search"></i>
-								<p class="hidden-lg hidden-md">Search</p>
-                            </a>
-                        </li>
-                        <a class="navbar-brand" href="table-ru.html">Search</a>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                           <a href="{% url 'user' %}">
-                               <p>Account</p>
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="{% url 'logout' %}">
-                                <p>Log out</p>
-                            </a>
-                        </li>
-						<li class="separator hidden-lg hidden-md"></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+{% block content %}
 
         <div class="content">
             <div class="container-fluid">
@@ -173,16 +99,16 @@
                                 </table>
                                 <div class="pagination pull-right">
                                 <span class="step-links">
-                                    {% if whatsapp.page_obj.has_previous %}
-                                        <a href="?page={{ whatsapp.page_obj.previous_page_number }}">previous</a>
+                                    {% if wa.page_obj.has_previous %}
+                                        <a href="?page={{ wa.page_obj.previous_page_number }}">previous</a>
                                     {% endif %}
 
                                     <span class="current">
-                                        Page {{ whatsapp.page_obj.number }} of {{ whatsapp.page_obj.paginator.num_pages }}
+                                        Page {{ wa.page_obj.number }} of {{ wa.page_obj.paginator.num_pages }}
                                     </span>
 
-                                    {% if whatsapp.page_obj.has_next %}
-                                        <a href="?page={{ whatsapp.page_obj.next_page_number }}">next</a>
+                                    {% if wa.page_obj.has_next %}
+                                        <a href="?page={{ wa.page_obj.next_page_number }}">next</a>
                                     {% endif %}
                                 </span>
                                 </div>
@@ -226,85 +152,24 @@
                                 </table>
                                 <div class="pagination pull-right">
                                 <span class="step-links">
-                                    {% if viber.page_obj.has_previous %}
-                                        <a href="?page={{ viber.page_obj.previous_page_number }}">previous</a>
+                                    {% if vib.page_obj.has_previous %}
+                                        <a href="?page={{ vib.page_obj.previous_page_number }}">previous</a>
                                     {% endif %}
 
                                     <span class="current">
-                                        Page {{ viber.page_obj.number }} of {{ viber.page_obj.paginator.num_pages }}
+                                        Page {{ vib.page_obj.number }} of {{ vib.page_obj.paginator.num_pages }}
                                     </span>
 
-                                    {% if viber.page_obj.has_next %}
-                                        <a href="?page={{ viber.page_obj.next_page_number }}">next</a>
+                                    {% if vib.page_obj.has_next %}
+                                        <a href="?page={{ vib.page_obj.next_page_number }}">next</a>
                                     {% endif %}
                                 </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="{% url 'home' %}">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Support Team
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    
-                </p>
-            </div>
-        </footer>
-
-
     </div>
-</div>
-
-
-</body>
-
-    <!--   Core JS Files   -->
-    <script src="{% static "new/js/jquery.3.2.1.min.js" %}" type="text/javascript"></script>
-	<script src="{% static "new/js/bootstrap.min.js" %}" type="text/javascript"></script>
-
-	<!--  Charts Plugin -->
-	<script src="{% static "new/js/chartist.min.js" %}"></script>
-
-    <!--  Notifications Plugin    -->
-    <script src="{% static "new/js/bootstrap-notify.js" %}"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
-    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-	<script src="{% static "new/js/light-bootstrap-dashboard.js" %}"></script>
-
-	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-	<script src="{% static "new/js/demo.js" %}"></script>
-
-
-</html>
+    {% endblock %}

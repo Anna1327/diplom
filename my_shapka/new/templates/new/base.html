@@ -34,59 +34,9 @@
 
 </head>
 <body>
-<div class="wrapper">
-    <div class="sidebar" data-color="azure" data-image="url(/new/img/ok1.jpg);">
+{% block title %}
 
-    	<div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="https://chat2desk.com/" class="simple-text">
-                    Chat2Desk
-                </a>
-            </div>
-
-            <ul class="nav">
-                <li class="active">
-                    <a href="{% url 'dashboard' %}">
-                        <i class="pe-7s-graph"></i>
-                        <p>{% trans 'Dashboard' %}</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'all-users' %}">
-                        <i class="pe-7s-user"></i>
-                        <p>{% trans 'All Users' %}</p>
-                    </a>
-                </li>
-				<li>
-                    <a href="{% url 'ru' %}">
-                        <i class="pe-7s-note2"></i>
-                        <p>RU</p>
-                    </a>
-                </li>
-				<li>
-                    <a href="{% url 'euro' %}">
-                        <i class="pe-7s-note2"></i>
-                        <p>EURO</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'free' %}">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>{% trans 'Free' %}</p>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'notifications' %}">
-                        <i class="pe-7s-bell"></i>
-                        <p>{% trans 'Notifications' %}</p>
-                    </a>
-                </li>
-            </ul>
-    	</div>
-    </div>
-
-
+{% endblock %}
 
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
@@ -135,7 +85,9 @@
                 </div>
             </div>
         </nav>
+        {% block content %}
 
+	    {% endblock %}
 
         <footer class="footer">
             <div class="container-fluid">
@@ -192,5 +144,13 @@
 
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="{% static "new/js/demo.js" %}"></script>
+
+    <script type="text/javascript">
+    	$(document).ready(function(){
+
+        	demo.initChartist();
+
+    	});
+	</script>
 
 </html>
