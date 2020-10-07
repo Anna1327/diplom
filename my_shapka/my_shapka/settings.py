@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
 from pathlib import Path
+import pymysql
+pymysql.version_info = (1, 4, 0, "final", 0)
+pymysql.install_as_MySQLdb()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,14 +87,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    # 'my_sql': {
-    #            'ENGINE': 'django.db.backends.mysql',
-    #            'NAME': 'mysql',
-    #            'USER': 'admin',
-    #            'PASSWORD': 'Rfgbnfyl;trdjhj,tq1',
-    #            'HOST': '172.22.23.155',
-    #            'PORT': '3306',
-    #        }
+    'my_sql': {
+               'ENGINE': 'django.db.backends.mysql',
+               'NAME': 'mysql',
+               'USER': 'admin',
+               'PASSWORD': 'Rfgbnfyl;trdjhj,tq1',
+               'HOST': '172.17.25.199',
+               'PORT': '3306',
+           }
 }
 
 

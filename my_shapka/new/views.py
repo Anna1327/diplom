@@ -62,11 +62,6 @@ class FreeView(ListView):
     def get_queryset(self):
         return Free.objects.all().filter(status="Free")
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['bs'] = self.get_queryset().filter(type="BS")
-    #     context['clicker'] = self.get_queryset().filter(type="Clicker")
-    #     return context
     def get_context_data(self, **kwargs):
         context = {
             'bs': super().get_context_data(
@@ -101,9 +96,6 @@ class AllUsersView(ListView):
 class NotificationsView(View):
 
     def get(self, request):
-        users = User.objects.using('my_sql').all()
-        print('================================================')
-        print(users)
         return render(request, 'new/notifications.html')
 
 
