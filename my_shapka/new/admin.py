@@ -4,6 +4,6 @@ from .models import *
 
 
 admin.site.register(User)
-admin.site.register(Free)
+admin.site.register(Equipment)
 admin.site.register(Ru)
 admin.site.register(Euro)

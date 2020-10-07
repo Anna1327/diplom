@@ -23,7 +23,7 @@ class User(models.Model):
         return f'{self.first_name}'
 
 
-class Free(models.Model):
+class Equipment(models.Model):
     session = models.CharField(max_length=20)
 
     BS = 'BS'

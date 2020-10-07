@@ -1,4 +1,7 @@
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect
+from django.utils.decorators import method_decorator
 from django.views.generic import View, ListView
 from django.db.models import Q
 from django.contrib.auth import login, authenticate
@@ -7,6 +10,16 @@ from .forms import *
 
 from .models import *
 # Create your views here.
+
+
+class ClientLoginMixin(View):
+    @method_decorator(login_required(login_url='/'))
+    def dispatch(self, request, *args, **kwargs):
+        try:
+            request.user.client_profile
+        except ValidationError:
+            return HttpResponseForbidden()
+        return super().dispatch(request, *args, **kwargs)
 
 
 class DashboardView(View):
@@ -55,12 +68,12 @@ class EuroView(ListView):
 
 class FreeView(ListView):
     paginate_by = 2
-    model = Free
+    model = Equipment
     template_name = 'new/free.html'
     context_object_name = 'free_ru'
 
     def get_queryset(self):
-        return Free.objects.all().filter(status="Free")
+        return Equipment.objects.all().filter(status="Free")
 
     def get_context_data(self, **kwargs):
         context = {
