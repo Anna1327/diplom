@@ -16,7 +16,7 @@ class ClientLoginMixin(View):
     @method_decorator(login_required(login_url='/'))
     def dispatch(self, request, *args, **kwargs):
         try:
-            request.user.client_profile
+            request.user.email
         except ValidationError:
             return HttpResponseForbidden()
         return super().dispatch(request, *args, **kwargs)
