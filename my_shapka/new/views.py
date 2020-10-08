@@ -117,6 +117,18 @@ class LoginView(View):
     def get(self, request):
         return render(request, 'registration/login2.html')
 
+    # def post(self, request):
+    #     if request.method == 'POST':
+    #         form = SignInForm(request.POST)
+    #         if form.is_valid():
+    #             email = form.cleaned_data.get('email')
+    #             password = form.cleaned_data.get('password')
+    #             user = authenticate(email=email, password=password)
+    #             login(request, user)
+    #             return redirect('ru')
+    #         else:
+    #             form = SignInForm()
+    #             return render(request, 'registration/login2.html', {'form': form})
 
 class LogoutView(View):
 
